@@ -47,11 +47,8 @@ class MainActivity : AppCompatActivity() {
 
     inner class SongAdapter: RecyclerView.Adapter<SongAdapter.ViewHolder>() {
         inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-            //            val txTitle: TextView = itemView.findViewById(android.R.id.text1)
-//            val txSinger: TextView = itemView.findViewById(android.R.id.text2)
             val txTitle: TextView = itemView.findViewById(R.id.text1)
             val txSinger: TextView = itemView.findViewById(R.id.text2)
-
             val niImage: NetworkImageView = itemView.findViewById<NetworkImageView>(R.id.image)
 
             init {
@@ -60,7 +57,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-            //val view = layoutInflater.inflate(android.R.layout.simple_list_item_2,
             val view = layoutInflater.inflate(R.layout.item_song,
                 parent,
                 false)
@@ -70,7 +66,6 @@ class MainActivity : AppCompatActivity() {
         override fun onBindViewHolder(holder: ViewHolder, position: Int) {
             holder.txTitle.text = model.list.value?.get(position)?.title
             holder.txSinger.text = model.list.value?.get(position)?.singer
-
             holder.niImage.setImageUrl(model.getImageUrl(position), model.imageLoader)
         }
 

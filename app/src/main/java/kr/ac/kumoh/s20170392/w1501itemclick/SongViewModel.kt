@@ -21,9 +21,7 @@ class SongViewModel(application: Application) : AndroidViewModel(application) {
 
     companion object {
         const val QUEUE_TAG = "SongVolleyRequest"
-
-        // NOTE: 서버 주소는 본인의 서버 IP 사용할 것
-        const val SERVER_URL = "https://expresssongdb-stmhz.run.goorm.io/"
+        const val SERVER_URL = "https://expresssongdb-stmhz.run.goorm.io"
     }
 
     private val songs = ArrayList<Song>()
@@ -58,7 +56,6 @@ class SongViewModel(application: Application) : AndroidViewModel(application) {
             "$SERVER_URL/song",
             null,
             {
-                //Toast.makeText(getApplication(), it.toString(), Toast.LENGTH_LONG).show()
                 songs.clear()
                 parseJson(it)
                 _list.value = songs
