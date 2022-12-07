@@ -3,15 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardElevation="4dp"
-    app:cardCornerRadius="8dp"
-    app:cardUseCompatPadding="true">
+    android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:padding="8dp"
+        android:background="@android:drawable/dialog_holo_light_frame">
 
         <com.android.volley.toolbox.NetworkImageView
             android:id="@+id/image"
@@ -19,7 +17,7 @@
             android:layout_height="50dp"
             android:scaleType="centerCrop"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent" />
+            app:layout_constraintLeft_toLeftOf="parent"/>
 
         <TextView
             android:id="@+id/text1"
